@@ -3,8 +3,9 @@ import Header from "./Header";
 import NotFound from "./NotFound";
 import {listDecks} from "../utils/api/index"
 import Home from "./Home"
-import CreateDeck from "./CreateDeck"
-import {Router, Link, Route, Switch } from "react-router-dom";
+// import CreateDeck from "./CreateDeck"
+import {  Route, Switch } from "react-router-dom";
+import Study from "./Study"
 
 function Layout() {
   const [decks, setDecks] = useState([])
@@ -32,13 +33,21 @@ function Layout() {
       <Header />
       <div className="container">
         {/* TODO: Implement the screen starting here */}
-        <Route exact={true} path="/">
-          <button type="button" className="btn btn-primary">Create Deck</button>
-          <Home decks={decks} />    
-        </Route>
+        <Switch>
+          <Route exact={true} path="/">
+            <button type="button" className="btn btn-primary">Create Deck</button>
+            <Home decks={decks} />    
+          </Route>
 
+          <Route path="/decks/:deckId/study">
+            <Study />
+          </Route>
 
-        <NotFound />
+          <Route>      
+            <NotFound />
+          </Route>  
+
+        </Switch>
       </div>
     </>
   );
