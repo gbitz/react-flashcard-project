@@ -59,7 +59,7 @@ function Study() {
     if (cards.length < 3) {
         return (
             <div>
-                <Navbar deck={deck} />
+                <Navbar deck={deck} currentPage="study" />
                 <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Not Enough Cards</h5>
