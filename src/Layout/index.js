@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react";
 import Header from "./Header";
 import NotFound from "./NotFound";
-import {listDecks} from "../utils/api/index"
-import Home from "./Home"
-import CreateDeck from "./CreateDeck"
+import {listDecks} from "../utils/api/index";
+import Home from "./Home";
+import CreateDeck from "./CreateDeck";
 import {  Route, Switch, Link} from "react-router-dom";
-import Study from "./Study"
-
+import Study from "./Study";
+import Deck from"./Deck";
 function Layout() {
   const [decks, setDecks] = useState([])
 
@@ -37,7 +37,7 @@ function Layout() {
         <Switch>
           <Route exact={true} path="/">
             <Link to="/decks/new">
-              <button type="button" className="btn btn-primary">Create Deck</button>
+              <button type="button" className="btn btn-primary mb-2">Create Deck</button>
             </Link>
             <Home decks={decks} />    
           </Route>
@@ -46,8 +46,12 @@ function Layout() {
             <Study />
           </Route>
 
-          <Route>
-            <CreateDeck path="/decks/new"/>
+          <Route path="/decks/new">
+            <CreateDeck />
+          </Route>
+
+          <Route path="/decks/:deckId" >
+            <Deck/>
           </Route>
 
           <Route>      

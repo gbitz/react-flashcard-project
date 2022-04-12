@@ -73,7 +73,7 @@ function Study() {
         if (cardFront) {
             return (
                 <div>
-                    <Navbar deck={deck} />
+                    <Navbar deck={deck} currentPage="study"/>
                     <div className="card">
                         <div className="card-body">
                             <h5 className="card-title">{cardCounter + 1} of {cards.length}</h5>
@@ -89,7 +89,7 @@ function Study() {
         } else {
             return (
                 <div>
-                    <Navbar deck={deck} />
+                    <Navbar deck={deck}  currentPage="study"/>
                     <div className="card">
                         <div className="card-body">
                             <h5 className="card-title">{cardCounter+ 1} of {cards.length}</h5>
