@@ -59,26 +59,6 @@
       "name": "dddd",
       "description": "dddd",
       "id": 12
-    },
-    {
-      "name": "ddddd",
-      "description": "ddddd",
-      "id": 13
-    },
-    {
-      "name": "ddddd",
-      "description": "ddddd",
-      "id": 14
-    },
-    {
-      "name": "aaaaaa",
-      "description": "aaaaaa",
-      "id": 15
-    },
-    {
-      "name": "wwww",
-      "description": "www",
-      "id": 16
     }
   ],
   "cards": [
@@ -122,32 +102,8 @@
     {
       "front": "test",
       "back": "test",
-      "deckId": 1,
-      "id": 8
-    },
-    {
-      "front": "test2",
-      "back": "test2",
-      "deckId": 1,
-      "id": 9
-    },
-    {
-      "front": "test",
-      "back": "test",
       "deckId": 2,
       "id": 10
-    },
-    {
-      "front": "front",
-      "back": "back",
-      "deckId": 1,
-      "id": 11
-    },
-    {
-      "front": "!!!",
-      "back": "!!!!!!!!!!",
-      "deckId": 1,
-      "id": 12
     }
   ]
 }

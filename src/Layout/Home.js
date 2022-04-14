@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {listDecks} from "../utils/api/index";
-
 import {Link} from "react-router-dom"
+import DeleteButton from "./DeleteButton"
 
 function Home() {
     const [decks, setDecks] = useState([])
@@ -34,7 +34,7 @@ function Home() {
                         <Link to={`/decks/${deck.id}/study`}>
                             <button type="button" className="btn btn-info m-2">Study</button>
                         </Link>
-                        <button type="button" className="btn btn-danger m-2">Delete</button>
+                        <DeleteButton itemToDelete={deck} type="deck" />
                     </div>
                 </div>
             )

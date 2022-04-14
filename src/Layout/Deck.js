@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {readDeck} from "../utils/api/index"
 import {useParams, Link} from "react-router-dom";
 import Navbar from "./Navbar"
+import DeleteButton from "./DeleteButton";
 
 function Deck() {
     const deckId = useParams().deckId;
@@ -42,7 +43,7 @@ function Deck() {
                 <Link to={`${deck.id}/study`}><button type="button" className="btn btn-primary m-1">Study</button></Link>
                 <Link to={`/decks/${deck.id}/cards/new`}><button type="button" className="btn btn-primary m-1">Add Cards</button></Link>
 
-                <button className="btn btn-danger m-1">Future delete deck button</button>
+                <DeleteButton itemToDelete={deck} type="deck" />
 
             
             </div>
@@ -59,7 +60,7 @@ function Deck() {
                     </div>
                     <div className="d-flex justify-content-end">
                         <Link to={`/decks/${deck.id}/cards/${card.id}/edit`}><button type="button" className="btn btn-secondary m-2">Edit</button></Link>
-                        <button className="btn btn-danger">Future delete card button</button>
+                        <DeleteButton itemToDelete={card} type="card" />
                     </div>
                 </div>
                 );                
