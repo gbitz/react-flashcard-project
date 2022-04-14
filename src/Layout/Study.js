@@ -49,12 +49,8 @@ function Study() {
     }
 
     const flipCardHandler = (event) => {
-        //setCardFront(!cardFront)
-        if (cardFront === true) {
-            setCardFront(false);
-        } else {
-            setCardFront(true);
-        }
+        setCardFront(!cardFront)
+
     }
     
     if (cards.length < 3) {
@@ -77,10 +73,13 @@ function Study() {
                     <Navbar deck={deck} currentPage="study"/>
                     <div className="card">
                         <div className="card-body">
-                            <h5 className="card-title">{cardCounter + 1} of {cards.length}</h5>
+                            <h5 className="card-title">Card {cardCounter + 1} of {cards.length}</h5>
                             <p className="card-text">{cardFront ? cards[cardCounter].front : cards[cardCounter].back}</p>
+                            
+                            
                             <button type="button" className="btn btn-primary m-2" onClick={flipCardHandler}>Flip</button>
-                            <button type="button" className="btn btn-primary m-2" onClick={nextCardHandler}>Next Card</button>
+                            {!cardFront ?<button type="button" className="btn btn-primary m-2" onClick={nextCardHandler}>Next</button> : ""}
+                            
 
                         </div>
                     </div>

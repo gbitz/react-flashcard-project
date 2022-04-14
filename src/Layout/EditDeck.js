@@ -70,9 +70,8 @@ function EditDeck() {
                         name="name"
                         id="name"
                         type="text"
-                        value={deck.name}
+                        defaultValue={deck.name}
                         onChange={nameInputHandler}
-                        placeholder="Deck Name"
                     />
 
                 <label>
@@ -84,8 +83,7 @@ function EditDeck() {
                         id="description"
                         rows="4"
                         onChange={descriptionInputHandler}
-                        value={deck.description}
-                        placeholder="Brief description of the deck"
+                        defaultValue={deck.description}
                     />  
                 </div>
 

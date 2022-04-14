@@ -19,46 +19,6 @@
       "name": "test 2",
       "description": "test 2",
       "id": 4
-    },
-    {
-      "name": "aaaaaaa",
-      "description": "aaaaaaa",
-      "id": 5
-    },
-    {
-      "name": "a",
-      "description": "a",
-      "id": 6
-    },
-    {
-      "name": "aaa",
-      "description": "aaa",
-      "id": 7
-    },
-    {
-      "name": "nnnnnnnnnn",
-      "description": "bbbbbbbbbfffffssfdsasafd",
-      "id": 8
-    },
-    {
-      "name": "deck name",
-      "description": "deck description",
-      "id": 9
-    },
-    {
-      "name": "deck name1",
-      "description": "deck description2",
-      "id": 10
-    },
-    {
-      "name": "deck name1",
-      "description": "dd",
-      "id": 11
-    },
-    {
-      "name": "dddd",
-      "description": "dddd",
-      "id": 12
     }
   ],
   "cards": [
@@ -94,8 +54,8 @@
     },
     {
       "cards": [],
-      "front": "b",
-      "back": "b",
+      "front": "fdsa",
+      "back": "bsfdsa",
       "deckId": 1,
       "id": 7
     },

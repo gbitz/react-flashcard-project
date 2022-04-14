@@ -43,7 +43,7 @@ function CardForm({currentCard={}, deck, deckId, formType}) {
     const inputBackHandler = (event) => {
         setCard({...card, back: event.target.value})
     }
-
+    
     return (
         <div>
             <form onSubmit={submitHandler}>
@@ -56,9 +56,8 @@ function CardForm({currentCard={}, deck, deckId, formType}) {
                         className="form-control"
                         name="front"
                         id="front"
-                        value={card.front}
                         onChange={inputFrontHandler}
-                        placeholder={currentCard ? currentCard.front : ""}
+                        defaultValue={currentCard ? currentCard.front : ""}
                     />
                 </div>
                 <div className="form-group">
@@ -70,9 +69,8 @@ function CardForm({currentCard={}, deck, deckId, formType}) {
                         className="form-control"
                         name="back"
                         id="back"
-                        value={card.back}
                         onChange={inputBackHandler}
-                        placeholder={currentCard ? currentCard.back : ""}
+                        defaultValue={currentCard ? currentCard.back : ""}
                     />
                 </div>
                 

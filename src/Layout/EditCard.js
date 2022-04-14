@@ -32,7 +32,7 @@ function EditCard() {
         return () => {
             abortController.abort();
           };
-      }, [deckId]);
+      }, [deckId, cardId]);
 
       
     return (

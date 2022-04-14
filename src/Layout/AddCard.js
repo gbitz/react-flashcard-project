@@ -6,7 +6,7 @@ import CardForm from "./CardForm";
 
 function AddCard() {
     const [deck, setDeck] = useState([]);
-    const [cards,setCards] = useState([]);
+    // const [cards,setCards] = useState([]);
     const {deckId} = useParams();
     
     useEffect(()=> {
@@ -16,7 +16,7 @@ function AddCard() {
             const response =  readDeck(deckId, abortController.signal);
             const deckFromAPI = await response;
             setDeck(deckFromAPI);
-            setCards(deckFromAPI.cards);
+            // setCards(deckFromAPI.cards);
           } catch (error) {
               if (error.name !== 'AbortError') {
                   throw error;

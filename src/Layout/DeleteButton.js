@@ -10,11 +10,11 @@ function DeleteButton({itemToDelete, type}) {
                 try {
                     await deleteDeck(itemToDelete.id);
                     console.log("Deck Deleted...");
-                    
+                    history.push("/")
+                    window.location.reload();
                 } catch (error) {
                     console.log("Deck Deletion Error... ", error);
                 }
-                history.push("/")
             }
 
         } else if (type==="card") {

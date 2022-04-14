@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {createDeck, readDeck} from "../utils/api/index";
+import {createDeck} from "../utils/api/index";
 import Navbar from "./Navbar.js";
 import {useHistory} from "react-router-dom";
 
