@@ -1,7 +1,26 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import {listDecks} from "../utils/api/index";
+
 import {Link} from "react-router-dom"
 
-function Home({decks}) {
+function Home() {
+    const [decks, setDecks] = useState([])
+  
+    useEffect(()=> {
+      async function loadDecks() {
+        try {
+          const response = listDecks();
+          const decksFromAPI = await response;
+  
+          setDecks(decksFromAPI);
+        } catch (error) {
+          console.log("deck loading error... ", error);
+          
+        }
+      }
+      
+      loadDecks();
+    },[])
     return decks.map((deck, index) => {
         return (
                 <div className="card mb-2"  key={index}>

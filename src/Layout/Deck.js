@@ -38,11 +38,11 @@ function Deck() {
                 <h3>{deck.name}</h3>
                 <p>{deck.description}</p>
 
-                <Link to="/edit"><button type="button" className="btn btn-primary">Edit</button></Link>
-                <Link to={`${deck.id}/study`}><button type="button" className="btn btn-primary">Study</button></Link>
-                <Link to="/addCard"><button type="button" className="btn btn-primary">Add Cards</button></Link>
+                <Link to="/edit"><button type="button" className="btn btn-primary m-1">Edit</button></Link>
+                <Link to={`${deck.id}/study`}><button type="button" className="btn btn-primary m-1">Study</button></Link>
+                <Link to={`/decks/${deck.id}/cards/new`}><button type="button" className="btn btn-primary m-1">Add Cards</button></Link>
 
-                <button className="btn btn-danger">Future delete deck button</button>
+                <button className="btn btn-danger m-1">Future delete deck button</button>
 
             
             </div>

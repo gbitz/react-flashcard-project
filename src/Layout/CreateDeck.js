@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {createDeck} from "../utils/api/index";
+import {createDeck, readDeck} from "../utils/api/index";
 import Navbar from "./Navbar.js";
 import {useHistory} from "react-router-dom";
 
@@ -23,9 +23,10 @@ function CreateDeck() {
 
     const submitFormHandler = async (event) => {
         event.preventDefault();
-        await createDeck(deck);
-        // history.push("/decks/:deckId")
-        history.push("/")
+        const response = await createDeck(deck);
+        
+        
+        history.push(`/decks/${response.id}`)
     }
 
     const cancelHandler = async (event) => {

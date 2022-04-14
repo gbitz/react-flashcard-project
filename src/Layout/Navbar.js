@@ -7,7 +7,7 @@ function Navbar({deck, currentPage}) {
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                    <li className="breadcrumb-item"><Link to="#">{deck.name}</Link></li>
+                    <li className="breadcrumb-item"><Link to={`/decks/${deck.id}`}>{deck.name}</Link></li>
                     <li className="breadcrumb-item active" aria-current="page">Study</li>
                 </ol>
             </nav>
@@ -29,6 +29,28 @@ function Navbar({deck, currentPage}) {
             <ol className="breadcrumb">
                 <li className="breadcrumb-item"><Link to="/">Home</Link></li>
                 <li className="breadcrumb-item active" aria-current="page">{deck.name}</li>
+            </ol>
+        </nav>
+        )
+    }
+    if (currentPage === "addCard") {
+        return (
+            <nav aria-label="breadcrumb">
+            <ol className="breadcrumb">
+                <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                <li className="breadcrumb-item"><Link to={`/decks/${deck.id}`}>{deck.name}</Link></li>
+                <li className="breadcrumb-item active" aria-current="page">Add Card</li>
+            </ol>
+        </nav>
+        )
+    }
+    if (currentPage === "editCard") {
+        return (
+            <nav aria-label="breadcrumb">
+            <ol className="breadcrumb">
+                <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                <li className="breadcrumb-item"><Link to={`/decks/${deck.id}`}>{deck.name}</Link></li>
+                <li className="breadcrumb-item active" aria-current="page">Edit Card</li>
             </ol>
         </nav>
         )
