@@ -12,25 +12,7 @@ import EditCard from "./EditCard"
 import EditDeck from "./EditDeck"
 
 function Layout() {
-  // const [decks, setDecks] = useState([])
-  
-  // useEffect(()=> {
-  //   async function loadDecks() {
-  //     try {
-  //       const response = listDecks();
-  //       const decksFromAPI = await response;
-
-  //       setDecks(decksFromAPI);
-  //     } catch (error) {
-  //       console.log("deck loading error... ", error);
-        
-  //     }
-  //   }
-    
-  //   loadDecks();
-  // },[])
-  
-  
+ 
 
   return (
     <>
