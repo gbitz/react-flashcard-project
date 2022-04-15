@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
-import {readDeck} from "../utils/api/index"
-import {useParams, Link} from "react-router-dom";
+import {readDeck, deleteDeck, deleteCard} from "../utils/api/index"
+import {useParams, Link, useHistory} from "react-router-dom";
 import Navbar from "./Navbar"
-import DeleteButton from "./DeleteButton";
 
 function Deck() {
+    const history = useHistory();
     const deckId = useParams().deckId;
     const [deck, setDeck] = useState([]);
     const [cards, setCards] = useState([]);
@@ -30,7 +30,31 @@ function Deck() {
             abortController.abort();
           };
       }, [deckId]);
+      
+      async function deleteDeckHandler(deckId) {
+        if (window.confirm("Are you certain you want to Delete this deck?")) {
+            try {
+                await deleteDeck(deckId);
+                console.log("Deck Deleted...");
+                history.push("/")
+                window.location.reload();
+            } catch (error) {
+                console.log("Deck Deletion Error... ", error);
+            }
+        }
+      }
 
+      async function deleteCardHandler(cardId) {
+        if (window.confirm("Are you certain you want to Delete this card?")) {
+            try {
+                await deleteCard(cardId);
+                console.log("Card Deleted...");
+            } catch (error) {
+                console.log("Card Deletion Error... ", error);
+            }
+            window.location.reload();
+        }
+      }
 
     return (
         <div>
@@ -42,8 +66,10 @@ function Deck() {
                 <Link to={`/decks/${deck.id}/edit`}><button type="button" className="btn btn-primary m-1"><i className="fa-solid fa-pencil"></i> Edit</button></Link>
                 <Link to={`${deck.id}/study`}><button type="button" className="btn btn-primary m-1"><i className="fa-solid fa-book"></i> Study</button></Link>
                 <Link to={`/decks/${deck.id}/cards/new`}><button type="button" className="btn btn-primary m-1"><i className="fa-solid fa-plus"></i> Add Cards</button></Link>
-
-                <DeleteButton itemToDelete={deck} type="deck" />
+                <button style={{float:'right'}} type="button" className="btn btn-danger m-1" onClick={()=>{deleteDeckHandler(deck.id)}}>
+                    <i className="fas fa-trash-alt"></i>
+                </button>
+                {/* <DeleteButton itemToDelete={deck} type="deck" /> */}
 
             </div>
             
@@ -59,7 +85,10 @@ function Deck() {
                     </div>
                     <div className="d-flex justify-content-end">
                         <Link to={`/decks/${deck.id}/cards/${card.id}/edit`}><button type="button" className="btn btn-secondary m-1"><i className="fa-solid fa-pencil"></i> Edit</button></Link>
-                        <DeleteButton itemToDelete={card} type="card" />
+                        <button style={{float:'right'}} type="button" className="btn btn-danger m-1" onClick={()=>{deleteCardHandler(card.id)}}>
+                            <i className="fas fa-trash-alt"></i>
+                        </button>
+                        {/* <DeleteButton itemToDelete={card} type="card" /> */}
                     </div>
                 </div>
                 );                

@@ -24,7 +24,7 @@ function Layout() {
 
           <Route exact={true} path="/">
             <Link to="/decks/new">
-              <button type="button" className="btn btn-primary mb-2"><i class="fa-solid fa-plus"></i> Create Deck</button>
+              <button type="button" className="btn btn-primary mb-2"><i className="fa-solid fa-plus"></i> Create Deck</button>
             </Link>
             <Home />    
           </Route>
