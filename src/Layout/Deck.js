@@ -39,9 +39,9 @@ function Deck() {
                 <h3>{deck.name}</h3>
                 <p>{deck.description}</p>
 
-                <Link to={`/decks/${deck.id}/edit`}><button type="button" className="btn btn-primary m-1">Edit</button></Link>
-                <Link to={`${deck.id}/study`}><button type="button" className="btn btn-primary m-1">Study</button></Link>
-                <Link to={`/decks/${deck.id}/cards/new`}><button type="button" className="btn btn-primary m-1">Add Cards</button></Link>
+                <Link to={`/decks/${deck.id}/edit`}><button type="button" className="btn btn-primary m-1"><i className="fa-solid fa-pencil"></i> Edit</button></Link>
+                <Link to={`${deck.id}/study`}><button type="button" className="btn btn-primary m-1"><i className="fa-solid fa-book"></i> Study</button></Link>
+                <Link to={`/decks/${deck.id}/cards/new`}><button type="button" className="btn btn-primary m-1"><i className="fa-solid fa-plus"></i> Add Cards</button></Link>
 
                 <DeleteButton itemToDelete={deck} type="deck" />
 
@@ -58,7 +58,7 @@ function Deck() {
                         </div>
                     </div>
                     <div className="d-flex justify-content-end">
-                        <Link to={`/decks/${deck.id}/cards/${card.id}/edit`}><button type="button" className="btn btn-secondary m-2">Edit</button></Link>
+                        <Link to={`/decks/${deck.id}/cards/${card.id}/edit`}><button type="button" className="btn btn-secondary m-1"><i className="fa-solid fa-pencil"></i> Edit</button></Link>
                         <DeleteButton itemToDelete={card} type="card" />
                     </div>
                 </div>

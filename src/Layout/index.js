@@ -36,13 +36,13 @@ function Layout() {
     <>
 
       <Header />
-      <div className="container">
+      <div style={{width: '40%', margin: '0 auto'}} className="container">
         {/* TODO: Implement the screen starting here */}
         <Switch>
 
           <Route exact={true} path="/">
             <Link to="/decks/new">
-              <button type="button" className="btn btn-primary mb-2">Create Deck</button>
+              <button type="button" className="btn btn-primary mb-2"><i class="fa-solid fa-plus"></i> Create Deck</button>
             </Link>
             <Home />    
           </Route>

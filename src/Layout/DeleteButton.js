@@ -31,8 +31,8 @@ function DeleteButton({itemToDelete, type}) {
     }
 
     return (
-        <button type="button" className="btn btn-danger" onClick={deleteHandler}>
-            Delete
+        <button style={{float:'right'}} type="button" className="btn btn-danger m-1" onClick={deleteHandler}>
+            <i className="fas fa-trash-alt"></i>
         </button>
     )
 }
