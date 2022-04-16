@@ -47,7 +47,6 @@ function CreateDeck() {
                     name="name"
                     id="name"
                     type="text"
-                    value={deck.name}
                     onChange={nameInputHandler}
                     placeholder="Deck Name"
                 />
@@ -61,7 +60,6 @@ function CreateDeck() {
                     id="description"
                     rows="4"
                     onChange={descriptionInputHandler}
-                    value={deck.description}
                     placeholder="Brief description of the deck"
                 />  
             </div>
